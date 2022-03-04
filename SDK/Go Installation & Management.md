@@ -13,6 +13,20 @@
   GOPATH=/home/lee/go
   ```
 
-  模块命名规范：`<域名>/<模块名>`，最好自己的模块也这么存，即`kwseeker.top/demo`。
+  模块命名规范：`<域名>/<用户名>/<模块名>`，最好自己的模块也这么存，即`kwseeker.top/kwseeker/demo`。
 
+  ```txt
+  ➜  go pwd    
+  /home/lee/mywork/go
+  ➜  go tree -L 3
+  .
+  ├── github.com
+  │   └── github
+  │       └── gh-ost
+  └── kwseeker.top
+      └── kwseeker
+          └── demo
+  ```
   
+  
+
