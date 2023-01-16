@@ -73,7 +73,8 @@
     使用SSH还是需要获取ROOT权限，不然无法执行 tcpdump 。
 
     ```shell
-    scp ~/tool/tcpdump root@192.168.31.202:/data/data/berserker.android.apps.sshdroid/home
+    # SSHDroid 默认端口是 2222
+    scp -P 2222 ~/tool/tcpdump root@192.168.31.202:/data/data/berserker.android.apps.sshdroid/home
     ```
 
     
