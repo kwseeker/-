@@ -21,10 +21,12 @@ sudo bash < <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/
 # 如果上面执行失败（依赖的文件下载失败），先尝试下载 v2ray 内核包（与本机环境适配的包）和上面两个脚本，然后本地执行安装
 wget https://github.com/v2fly/v2ray-core/releases/download/v5.4.1/v2ray-linux-64.zip
 sudo ./install-release.sh -l ./v2ray-linux-64.zip
-# 下面脚本执行失败就先下载里面的两个数据文件, 然后只保留 main() 中的 install_file函数, 然后重新执行
+sudo ./install-dat-release.sh
+# 上面install-dat-release.sh脚本执行失败就先下载里面的两个数据文件然后执行
 # DOWNLOAD_LINK_GEOIP="https://github.com/v2fly/geoip/releases/latest/download/geoip.dat"
 # DOWNLOAD_LINK_GEOSITE="https://github.com/v2fly/domain-list-community/releases/latest/download/dlc.dat"
-sudo ./install-dat-release.sh
+sudo install -m 644 ./dlc.dat /usr/local/share/v2ray/geosite.dat
+sudo install -m 644 ./geoip.dat /usr/local/share/v2ray/geoip.dat
 # 移除 V2Ray
 # sudo bash < <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh) --remove
 
