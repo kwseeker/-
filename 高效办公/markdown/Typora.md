@@ -1,8 +1,31 @@
-# 软件配置合辑
+# Typora
 
+最近更新（2023-06）Linux Mint 系统后重装软件，发现 Typora 1.0 之后开始收费了，看价格89元终生使用感觉还行，但是感觉对比之前版本并没有很亮眼的更新，所以暂时还用免费版，最后一个免费版本是 0.11.18。
 
+官网已经停止提供免费版本下载服务了，只找到了压缩包。
 
-## Typora
+卸载收费版本：
+
+```shell
+sudo apt-get remove typora
+```
+
+解压后，放到 /opt ，做个 Linux 快捷方式:
+
+```properties
+[Desktop Entry]
+Name=Typora
+Comment=a minimal Markdown reading & writing app. Change Log: (https://typora.io/releases/all)
+GenericName=Markdown Editor
+Exec=/opt/typora/Typora
+Icon=/opt/typora/resources/assets/icon/icon_256x256@2x.png
+Type=Application
+StartupNotify=true
+Categories=Office;WordProcessor;
+MimeType=text/markdown;text/x-markdown;
+```
+
+其他设置：
 
 + **标题自动编号**
 
@@ -251,6 +274,3 @@
   content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) ". "
   }
   ```
-
-  
-
